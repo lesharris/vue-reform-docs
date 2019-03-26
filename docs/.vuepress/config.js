@@ -3,7 +3,6 @@ module.exports = {
   description: 'Documentation for Vue Reform',
   theme: '@vuepress/theme-default',
   plugins: [
-    '@vuepress/theme-default',
     '@vuepress/clean-urls',
     '@vuepress/container',
     '@vuepress/register-components',
@@ -15,16 +14,24 @@ module.exports = {
     '@vuepress/pwa',
     '@vuepress/medium-zoom'
   ],
-  serviceWorker: true,
+  serviceWorker: {
+    updatePopup: true
+  },
   themeConfig: {
-    home: true,
-    heroImage: '/images/vue-reform-logo.png',
-    heroText: 'Kick ass forms with Vue made simple and easy',
-    footer: 'MIT Licensed | Copyright © 2018-present Les Harris',
     nav: [
-      {text: 'Home', link: '/' },
-      {text: 'Site', link: 'https://vuereform.dev'},
-      {text: 'Github', link: 'https://github.com/lesharris/vue-reform.git'}
-    ]
+      { text: 'Home', link: '/' },
+      { text: 'Site', link: 'https://vuereform.dev' }
+    ],
+    sidebar: [
+      '/'
+    ],
+    repo: 'lesharris/vue-reform',
+    repoLabel: 'Contribute!',
+    docsRepos: 'lesharris/vue-reform-docs',
+    docsDir: 'docs',
+    docsBranch: 'master',
+    editLinks: true,
+    editLinkText: 'Help us improve this page!',
+    displayAllHeaders: true
   }
 }
